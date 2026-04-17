@@ -359,7 +359,7 @@ def build_dashboard(dcf_df, dcf_summary, acc_dil, sens):
 
     plt.savefig("ma_analysis_dashboard.png", dpi=180,
                 bbox_inches="tight", facecolor=COLORS["bg"])
-    print("💾  Dashboard saved → ma_analysis_dashboard.png")
+    print("  Dashboard saved → ma_analysis_dashboard.png")
     plt.show()
 
 # ═════════════════════════════════════════════
