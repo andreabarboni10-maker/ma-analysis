@@ -370,7 +370,7 @@ if __name__ == "__main__":
     print(f"  M&A Analysis: {DEAL['acquirer']} acquires {DEAL['target']}")
     print("═" * 60)
 
-    print("\n📊  Building DCF model …")
+    print("\n  Building DCF model …")
     dcf_df, dcf_summary = build_dcf(TARGET, SYNERGIES)
     print(f"    ✓ PV of FCF:        ${dcf_summary['PV of FCF']/1000:>7.1f}B")
     print(f"    ✓ PV of Terminal:   ${dcf_summary['PV of TV']/1000:>7.1f}B")
@@ -381,15 +381,15 @@ if __name__ == "__main__":
     premium = (DEAL['offer_per_share'] / dcf_summary['Implied Price'] - 1) * 100
     print(f"    ✓ Premium vs DCF:   {premium:>+7.1f}%")
 
-    print("\n💰  Running Accretion/Dilution analysis …")
+    print("\n  Running Accretion/Dilution analysis …")
     acc_dil = accretion_dilution(DEAL, ACQUIRER, TARGET, SYNERGIES)
     print(f"    ✓ Standalone EPS:   ${acc_dil['Standalone EPS']:>7.2f}")
     print(f"    ✓ Pro-Forma EPS:    ${acc_dil['Pro-Forma EPS']:>7.2f}")
     sign = "ACCRETIVE" if acc_dil["Accretion (%)"] >= 0 else "DILUTIVE"
     print(f"    ✓ Result:           {sign} {acc_dil['Accretion (%)']:+.2f}%")
 
-    print("\n🔥  Computing sensitivity table …")
+    print("\n  Computing sensitivity table …")
     sens = sensitivity_table(TARGET)
 
-    print("\n🎨  Generating dashboard …")
+    print("\n  Generating dashboard …")
     build_dashboard(dcf_df, dcf_summary, acc_dil, sens)

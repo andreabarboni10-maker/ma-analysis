@@ -335,6 +335,6 @@ with st.expander(" Full DCF Table"):
 st.markdown("---")
 st.markdown(
     "<p style='text-align:center;color:#8b949e;font-size:0.8rem'>"
-    "⚠️ Educational model based on public estimates. Not investment advice."
+    " Educational model based on public estimates. Not investment advice."
     "</p>", unsafe_allow_html=True
 )
