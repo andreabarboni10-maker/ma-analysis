@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 # ─────────────────────────────────────────────
 st.set_page_config(
     page_title="M&A Analysis",
-    page_icon="🤝",
+    page_icon="",
     layout="wide",
 )
 
